@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2025 at 09:46 AM
+-- Generation Time: Jan 26, 2025 at 07:38 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -223,7 +223,7 @@ CREATE TABLE `category_manages` (
 INSERT INTO `category_manages` (`id`, `category_name`, `status`, `brand`, `created_at`, `updated_at`) VALUES
 (1, 'Search by Trade Name', 'Active', NULL, '2025-01-18 00:17:39', '2025-01-19 22:48:06'),
 (2, 'Search by Therapeutic Class', 'Active', NULL, '2025-01-18 04:22:10', '2025-01-18 04:22:10'),
-(3, 'Search by Generic Name', 'Active', NULL, '2025-01-18 04:24:34', '2025-01-18 04:24:34');
+(4, 'Animal Health', 'Active', NULL, '2025-01-23 00:21:39', '2025-01-23 00:21:39');
 
 -- --------------------------------------------------------
 
@@ -4234,6 +4234,8 @@ CREATE TABLE `product_manages` (
   `product_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `t_cat_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `g_cat_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `m_cat_id` int(11) DEFAULT NULL,
+  `sub_cat_id` int(11) DEFAULT NULL,
   `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `summary` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `short_summary` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -4265,11 +4267,12 @@ CREATE TABLE `product_manages` (
 -- Dumping data for table `product_manages`
 --
 
-INSERT INTO `product_manages` (`id`, `product_name`, `t_cat_id`, `g_cat_id`, `image`, `summary`, `short_summary`, `shot`, `first_ch`, `brand_image`, `pdf`, `pdf1`, `description`, `meta_title`, `meta_des`, `presntation`, `indications`, `dosage_administration`, `contrainidications`, `side_effects`, `warning_precautions`, `drug_interaction`, `use_in_special_groups`, `packing`, `status`, `slug`, `home_status`, `created_at`, `updated_at`) VALUES
-(6, 'Karyn Montoya', '1', '1', '1737192561.jpg', 'Pandora Huffman', '<p>sdfasf</p>', 'Christian Abbott', 'K', NULL, '1737192561.jpg', NULL, '<p>asfdasf</p>', NULL, NULL, '<p>asdfasf</p>', '<p>asfdasf</p>', '<p>asdfasf</p>', '<p>asdfa</p>', '<p>asdfasf</p>', '<p>asdfasf</p>', '<p>asfdasf</p>', '<p>adfaf</p>', '<p>asfdasf</p>', 'Active', 'karyn-montoya', '1', '2025-01-18 03:29:21', '2025-01-18 14:42:40'),
-(12, 'DD', '1', '1', '1737233187.gif', 'DD', '<p>fdsgsd</p>', 'dsg', 'D', NULL, '1737233188.gif', NULL, '<p>sdfgdsg</p>', NULL, NULL, '<p>sgdf</p>', '<p>sdgfg</p>', '<p>sdfgsdg</p>', '<p>sdfgsdg</p>', '<p>sdfgsdg</p>', '<p>sgdfgsdg</p>', '<p>sdfgsdg</p>', '<p>sfgsdgfsdg</p>', '<p>sdfgsgsdg</p>', 'Active', 'dd', NULL, '2025-01-18 14:46:27', '2025-01-18 14:46:28'),
-(13, 'Aa', '1', '1', '1737266098.jpeg', 'Aa', '<p>asss</p>', 'aa', 'A', NULL, '1737268256.jpg', '1737268283.pdf', '<p>fdsaf</p>', NULL, NULL, '<p>fdsaf</p>', '<p>sdfgsd</p>', '<p>sdfgs</p>', NULL, '<p>sdgfsdg</p>', '<p>sfdgsdg</p>', '<p>sfgsdg</p>', NULL, NULL, 'Active', 'aa', NULL, '2025-01-18 23:54:58', '2025-01-19 00:31:23'),
-(14, '123', '1', '2', '1737353184.png', '234', '<p>dsds</p>', 'dsdsd', '1', NULL, '1737353184.pdf', '1737353184.pdf', '<p>dsds</p>', NULL, NULL, '<p>sdsds</p>', '<p>sdsds</p>', '<p>dsdsd</p>', NULL, '<p>dsdsd</p>', '<p>sddsd</p>', '<p>sdsds</p>', NULL, NULL, 'Active', '123', NULL, '2025-01-20 00:06:24', '2025-01-20 00:06:24');
+INSERT INTO `product_manages` (`id`, `product_name`, `t_cat_id`, `g_cat_id`, `m_cat_id`, `sub_cat_id`, `image`, `summary`, `short_summary`, `shot`, `first_ch`, `brand_image`, `pdf`, `pdf1`, `description`, `meta_title`, `meta_des`, `presntation`, `indications`, `dosage_administration`, `contrainidications`, `side_effects`, `warning_precautions`, `drug_interaction`, `use_in_special_groups`, `packing`, `status`, `slug`, `home_status`, `created_at`, `updated_at`) VALUES
+(6, 'Abdul', '1', '1', NULL, NULL, '1737192561.jpg', 'Pandora Huffman', '<p>sdfasf</p>', 'Christian Abbott', 'K', NULL, '1737192561.jpg', NULL, '<p>asfdasf</p>', NULL, NULL, '<p>asdfasf</p>', '<p>asfdasf</p>', '<p>asdfasf</p>', '<p>asdfa</p>', '<p>asdfasf</p>', '<p>asdfasf</p>', '<p>asfdasf</p>', '<p>adfaf</p>', '<p>asfdasf</p>', 'Active', 'karyn-montoya', '1', '2025-01-18 03:29:21', '2025-01-18 14:42:40'),
+(12, 'DD', '1', '1', 4, 3, '1737233187.gif', 'DD', '<p>fdsgsd</p>', 'dsg', 'D', NULL, '1737233188.gif', NULL, '<p>sdfgdsg</p>', NULL, NULL, '<p>sgdf</p>', '<p>sdgfg</p>', '<p>sdfgsdg</p>', NULL, '<p>sdfgsdg</p>', '<p>sgdfgsdg</p>', '<p>sdfgsdg</p>', NULL, NULL, 'Active', 'dd', NULL, '2025-01-18 14:46:27', '2025-01-25 02:41:36'),
+(13, 'Aa', '1', '1', 4, 3, '1737266098.jpeg', 'Aa', '<p>asss</p>', 'aa', 'A', NULL, '1737268256.jpg', '1737268283.pdf', '<p>fdsaf</p>', NULL, NULL, '<p>fdsaf</p>', '<p>sdfgsd</p>', '<p>sdfgs</p>', NULL, '<p>sdgfsdg</p>', '<p>sfdgsdg</p>', '<p>sfgsdg</p>', NULL, NULL, 'Active', 'aa', NULL, '2025-01-18 23:54:58', '2025-01-25 02:42:19'),
+(14, '123', '1', '2', NULL, NULL, '1737353184.png', '234', '<p>dsds</p>', 'dsdsd', '1', NULL, '1737353184.pdf', '1737353184.pdf', '<p>dsds</p>', NULL, NULL, '<p>sdsds</p>', '<p>sdsds</p>', '<p>dsdsd</p>', NULL, '<p>dsdsd</p>', '<p>sddsd</p>', '<p>sdsds</p>', NULL, NULL, 'Active', '123', NULL, '2025-01-20 00:06:24', '2025-01-20 00:06:24'),
+(15, 'BulBul', '1', '1', 4, 3, '1737779851.png', 'asd', '<p>asd</p>', 'asd', 'P', NULL, '1737779851.pdf', '1737779851.pdf', '<p>asd</p>', NULL, NULL, '<p>asd</p>', '<p>asd</p>', '<p>asd</p>', NULL, '<p>asd</p>', '<p>asd</p>', '<p>asd</p>', NULL, NULL, 'Active', 'product-name', '2', '2025-01-24 22:37:31', '2025-01-24 22:42:19');
 
 -- --------------------------------------------------------
 
@@ -4853,7 +4856,9 @@ INSERT INTO `pro_galleries` (`id`, `pro_id`, `gallery`, `created_at`, `updated_a
 (6, 12, '1737233188.678c1324230bd.1.jpg', '2025-01-18 14:46:28', '2025-01-18 14:46:28'),
 (7, 13, '1737266100.678c93b42e011.0.jpg', '2025-01-18 23:55:00', '2025-01-18 23:55:00'),
 (8, 14, '1737353184.678de7e0de140.0.jpg', '2025-01-20 00:06:24', '2025-01-20 00:06:24'),
-(9, 14, '1737353184.678de7e0e8fe0.1.jpg', '2025-01-20 00:06:24', '2025-01-20 00:06:24');
+(9, 14, '1737353184.678de7e0e8fe0.1.jpg', '2025-01-20 00:06:24', '2025-01-20 00:06:24'),
+(10, 15, '1737779851.67946a8b42b50.0.png', '2025-01-24 22:37:31', '2025-01-24 22:37:31'),
+(11, 15, '1737779851.67946a8b63e17.1.jpg', '2025-01-24 22:37:31', '2025-01-24 22:37:31');
 
 -- --------------------------------------------------------
 
@@ -4876,10 +4881,13 @@ CREATE TABLE `prro_categorys` (
 INSERT INTO `prro_categorys` (`id`, `pro_id`, `cat_id`, `created_at`, `updated_at`) VALUES
 (1, 6, 1, '2025-01-18 03:30:25', '2025-01-18 03:30:25'),
 (5, 12, 3, '2025-01-18 14:49:17', '2025-01-18 14:49:17'),
-(15, 13, 2, '2025-01-19 00:31:23', '2025-01-19 00:31:23'),
 (16, 14, 1, '2025-01-20 00:06:24', '2025-01-20 00:06:24'),
 (17, 14, 2, '2025-01-20 00:06:24', '2025-01-20 00:06:24'),
-(18, 14, 3, '2025-01-20 00:06:24', '2025-01-20 00:06:24');
+(18, 14, 3, '2025-01-20 00:06:24', '2025-01-20 00:06:24'),
+(19, 15, 1, '2025-01-24 22:37:31', '2025-01-24 22:37:31'),
+(20, 15, 2, '2025-01-24 22:37:31', '2025-01-24 22:37:31'),
+(21, 15, 4, '2025-01-24 22:37:31', '2025-01-24 22:37:31'),
+(22, 13, 2, '2025-01-25 02:42:19', '2025-01-25 02:42:19');
 
 -- --------------------------------------------------------
 
@@ -5099,6 +5107,29 @@ CREATE TABLE `sliders` (
 INSERT INTO `sliders` (`id`, `title`, `sub_title`, `url`, `image`, `created_at`, `updated_at`) VALUES
 (37, 'Main Slider', 'Quality, Innovation, Safety & Usefulness. Accelerating pharma research and bringing medical science to life.', NULL, 'main-slider-2025-01-20-678dd33073bbd.jpg', '2023-05-30 13:53:10', '2025-01-20 04:10:55'),
 (39, '#', NULL, NULL, '-2025-01-20-678e21f6efdd8.jpg', '2025-01-20 04:14:14', '2025-01-20 04:14:14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sub_category_manages`
+--
+
+CREATE TABLE `sub_category_manages` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `category_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category_manage_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sub_category_manages`
+--
+
+INSERT INTO `sub_category_manages` (`id`, `category_name`, `image`, `category_manage_id`, `created_at`, `updated_at`) VALUES
+(3, 'tews', 'tews-2025-01-25-67946379ce497.png', '4', '2025-01-24 22:07:21', '2025-01-24 22:07:21'),
+(4, 'sadf', NULL, '1', '2025-01-24 22:28:38', '2025-01-24 22:28:38');
 
 -- --------------------------------------------------------
 
@@ -5565,6 +5596,12 @@ ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sub_category_manages`
+--
+ALTER TABLE `sub_category_manages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `teams`
 --
 ALTER TABLE `teams`
@@ -5612,6 +5649,12 @@ ALTER TABLE `applications`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `category_manages`
+--
+ALTER TABLE `category_manages`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `facilities`
 --
 ALTER TABLE `facilities`
@@ -5639,7 +5682,7 @@ ALTER TABLE `links`
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -5663,7 +5706,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `product_manages`
 --
 ALTER TABLE `product_manages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `projects`
@@ -5675,19 +5718,25 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `pro_galleries`
 --
 ALTER TABLE `pro_galleries`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `prro_categorys`
 --
 ALTER TABLE `prro_categorys`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT for table `sub_category_manages`
+--
+ALTER TABLE `sub_category_manages`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
