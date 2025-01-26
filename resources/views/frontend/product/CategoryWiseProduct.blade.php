@@ -1,6 +1,3 @@
-
-
-
 @extends('frontend.app')
 @section('title') ALL Category Wise Product @endsection
 @section('main')
@@ -35,7 +32,7 @@
                     @foreach($Category as $key => $cat)
                         <li><a href="{{route('CategoryProduct',$cat->id)}}">{{@$cat->category_name}}</a></li>
                    @endforeach
-                          
+
                            {{-- <a href="product-trade-name.html"><i class="far fa-angle-double-right"></i>Search by Trade Name</a>
                            <a href="product-generic-name.html"><i class="far fa-angle-double-right"></i>Search by Generic Name</a>
                            <a href="productTherapeuticClass.html"><i class="far fa-angle-double-right"></i>Search by Therapeutic Class</a> --}}
@@ -77,14 +74,14 @@
     @endphp
 
     <li class="nav-item" role="presentation">
-        <button 
-            class="nav-link nav-link-filter-btn {{ $isActive ? 'active' : '' }}" 
-            id="tab-{{ strtolower($char) }}" 
-            data-bs-toggle="tab" 
-            data-bs-target="#content-{{ strtolower($char) }}" 
-            type="button" 
-            role="tab" 
-            aria-controls="content-{{ strtolower($char) }}" 
+        <button
+            class="nav-link nav-link-filter-btn {{ $isActive ? 'active' : '' }}"
+            id="tab-{{ strtolower($char) }}"
+            data-bs-toggle="tab"
+            data-bs-target="#content-{{ strtolower($char) }}"
+            type="button"
+            role="tab"
+            aria-controls="content-{{ strtolower($char) }}"
             aria-selected="{{ $isActive ? 'true' : 'false' }}"
             onclick="window.location.href='{{ $route }}'">
             {{ $char }}
@@ -101,29 +98,29 @@
                             ->whereHas('product', fn($query) => $query->where('status', 'Active'))
                             ->get()
                             ->groupBy('cat_id') as $catId => $products) --}}
-                    
+
                             @foreach ($pro as $productCategory)
                                 {{-- @php
                                     $product = $productCategory->product; // Access the related ProductManage model
                                 @endphp --}}
-                    
-                                <div class="tab-pane fade show active" 
-                                     id="content-{{ $productCategory->id }}" 
-                                     role="tabpanel" 
+
+                                <div class="tab-pane fade show active"
+                                     id="content-{{ $productCategory->id }}"
+                                     role="tabpanel"
                                      aria-labelledby="tab-{{ $productCategory->id }}">
                                     <div class="row">
                                         <div class="col-lg-4 col-6">
-                                            <div class="product-card wow fadeInLeft" 
-                                                 data-wow-duration="1s" 
+                                            <div class="product-card wow fadeInLeft"
+                                                 data-wow-duration="1s"
                                                  data-wow-delay=".35s">
-                                                 
+
                                                 <div class="product-card__image">
                                                     <a href="#">
-                                                        <img src="{{ $productCategory->image ? url('uploads/product_manage/' . $productCategory->image) : '' }}" 
+                                                        <img src="{{ $productCategory->image ? url('uploads/product_manage/' . $productCategory->image) : '' }}"
                                                              alt="{{ $productCategory->product_name }}">
                                                     </a>
                                                 </div>
-                                                
+
                                                 <div class="product-card__info text-center">
                                                     <h2 class="product-card__title">
                                                         <a href="#">
@@ -142,7 +139,7 @@
                             {{-- @endforeach --}}
                         @endforeach
                     </div>
-                    
+
 
                       <!--  -->
                    </div>

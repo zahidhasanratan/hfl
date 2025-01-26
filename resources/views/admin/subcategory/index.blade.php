@@ -38,7 +38,7 @@
 
                                         {{-- <th>Url</th> --}}
 
-                                        <th style="text-align: center">Created At</th>
+                                        <th style="text-align: center">Url</th>
                                         <th style="text-align: center" width="17%;">Action</th>
 
                                     </tr>
@@ -51,7 +51,7 @@
 
 
 
-                                        <td style="text-align: center" class="center">{{ $socials->created_at }}</td>
+                                        <td style="text-align: center" class="center">{{ url('sub_category_product') }}/{{ $socials->id }}</td>
                                         <td style="text-align: center"><a href="{{route('SubCategoryEdite',$socials->id)}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>
 
                                             <a href="{{route('SubCategoryDelete',$socials->id)}}" id="delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
