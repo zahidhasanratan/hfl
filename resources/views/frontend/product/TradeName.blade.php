@@ -8,33 +8,23 @@
     <!-- Start: SIngle Product -->
     <main class="main">
         <div class="hero-section">
-            <div class="hero-slider owl-carousel owl-theme owl-loaded owl-drag">
+{{--            <div class="hero-slider owl-carousel owl-theme">--}}
+{{--                @php--}}
+{{--                    $lastSlug = basename(url()->current());--}}
+{{--                @endphp--}}
+{{--                @php--}}
+{{--                    $banner = \App\Menu::where('slug', $lastSlug)->first()->image ;--}}
+{{--                @endphp--}}
+{{--                @if($banner =='')--}}
+{{--                    <div class="hero-single" style="background: url({{ asset('front/assets/img/slider/4.jpg') }}); max-height: 180px;">--}}
+{{--                    </div>--}}
+{{--                @else--}}
+{{--                    <div class="hero-single" style="background: url({{ asset('uploads/menu') }}/{{ $banner }}); max-height: 180px;">--}}
+{{--                    </div>--}}
+{{--                @endif--}}
 
-                <div class="owl-stage-outer">
-                    <div class="owl-stage"
-                         style="transform: translate3d(-2698px, 0px, 0px); transition: all; width: 6745px;">
 
-                        <div class="owl-item cloned" style="width: 1349px;">
-                            <div class="hero-single"
-                                 style="background: url({{ asset('uploads/subcategory') }}/{{ \App\SubCategoryManage::where('id', $lastSlug)->first()->image
- }}); max-height: 430px;">
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="owl-nav disabled">
-                    <button type="button" role="presentation" class="owl-prev"><i class="far fa-long-arrow-left"></i>
-                    </button>
-                    <button type="button" role="presentation" class="owl-next"><i class="far fa-long-arrow-right"></i>
-                    </button>
-                </div>
-                <div class="owl-dots disabled"></div>
-            </div>
-
-        </div>
-
+{{--            </div>--}}
 
         <section class="product-wrapper pt-50">
             <div class="container">
@@ -55,13 +45,13 @@
 
                                 <div class="category-list">
 
-{{--                                    @foreach($Category as $key => $cat)--}}
-{{--                                        <li><a href="{{route('CategoryProduct',$cat->id)}}">{{@$cat->category_name}}</a></li>--}}
-                                        <li><a href="{{ route('TradeName') }}">Search by Trade Name</a></li>
-                                        <li><a href="{{ route('Therapeutic') }}">Search by Therapeutic</a></li>
-                                        <li><a href="#">Search by Generic</a></li>
+                                    {{--                                    @foreach($Category as $key => $cat)--}}
+                                    {{--                                        <li><a href="{{route('CategoryProduct',$cat->id)}}">{{@$cat->category_name}}</a></li>--}}
+                                    <li><a href="{{ route('TradeName') }}">Search by Trade Name</a></li>
+                                    <li><a href="{{ route('Therapeutic') }}">Search by Therapeutic</a></li>
+                                    <li><a href="{{ route('Generic') }}">Search by Generic</a></li>
 
-{{--                                    @endforeach--}}
+                                    {{--                                    @endforeach--}}
 
                                     {{-- <a href="product-trade-name.html"><i class="far fa-angle-double-right"></i>Search by Trade Name</a>
                                     <a href="product-generic-name.html"><i class="far fa-angle-double-right"></i>Search by Generic Name</a>
@@ -96,7 +86,7 @@
                                 <div class="row mt-3" id="productList">
 
 
-                                    @foreach(\App\ProductManage::where('sub_cat_id', $lastSlug)->get() as $productCategory)
+                                    @foreach(\App\ProductManage::all() as $productCategory)
                                         <div class="col-lg-4 col-6 product-card-wrapper"
                                              data-letter="{{ strtoupper(substr($productCategory->product_name, 0, 1)) }}">
                                             <div class="product-card">

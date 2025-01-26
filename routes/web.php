@@ -18,7 +18,17 @@ route::get('all_product','frontend\HomeController@AllProduct')->name('AllProduct
 route::get('single_product/{slug}','fontend\FontController@SingleProduct')->name('SingleProduct');
 
 route::get('category_product/{cat_id}','frontend\HomeController@CategoryProduct')->name('CategoryProduct');
+
 route::get('sub_category_product/{cat_id}','frontend\HomeController@SubCategoryProduct')->name('SubCategoryProduct');
+
+route::get('trade_name','frontend\HomeController@TradeName')->name('TradeName');
+
+Route::post('ProductSearch', 'frontend\HomeController@ProductSearch')->name('ProductSearch');
+
+route::get('Therapeutic','frontend\HomeController@Therapeutic')->name('Therapeutic');
+route::get('Therapeutic/{id}','frontend\HomeController@TherapeuticID')->name('TherapeuticId');
+route::get('Generic','frontend\HomeController@Generic')->name('Generic');
+route::get('Generic/{id}','frontend\HomeController@GenericId')->name('GenericId');
 
 
 route::get('All_Product_character_search/{cat_id}/{Char}','fontend\FontController@AllProductCharacterSearch')->name('AllProductCharacterSearch');

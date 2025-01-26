@@ -68,7 +68,10 @@ class MenuController extends Controller
                 mkdir('uploads/menu', 0777, true);
             }
             $image->move('uploads/menu', $imagename);
-            $menu->image = $imagename;
+
+        }
+        else{
+            $imagename ='';
         }
 
         $menu = new Menu();
@@ -174,7 +177,10 @@ class MenuController extends Controller
                 mkdir('uploads/menu', 0777, true);
             }
             $image->move('uploads/menu', $imagename);
-            $menu->image = $imagename;
+
+        }
+        else{
+            $imagename ='';
         }
         $menu->menu_name = $request->menu_name;
 //        $menu->slug = $slug;
@@ -197,6 +203,7 @@ class MenuController extends Controller
         $menu->footer1 = $request->footer1;
         $menu->top_header = $request->top_header;
         $menu->footer2 = $request->footer2;
+        $menu->image = $imagename;
         $menu->save();
         return redirect()->route('menu.index')->with('successMsg', 'Menu Successfully Updated');
     }

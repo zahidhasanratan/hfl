@@ -20,10 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac37ed74-cae2-4a88-95b0-548c4b5c55d8" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/product/Generic.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/product/GenericId.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/product/ProductSearch.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/product/Therapeutic.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/product/TherapeuticID.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/product/TradeName.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/subcategory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/subcategory/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/product/CategoryWiseProduct.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/product/CategoryWiseProduct.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/admin/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/MenuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/product/SubCategoryProduct.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/product/SubCategoryProduct.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +287,7 @@
       <workItem from="1737608179686" duration="106000" />
       <workItem from="1737612964702" duration="10443000" />
       <workItem from="1737777721649" duration="12605000" />
-      <workItem from="1737860780079" duration="447000" />
+      <workItem from="1737860780079" duration="6901000" />
     </task>
     <servers />
   </component>
@@ -308,10 +315,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1737608285911" />
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1737792601592">
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1737868902553">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1737792601592" />
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1737868902553" />
     <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1737789381637">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -326,7 +333,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/frontend/HomeController.php</url>
-          <line>1750</line>
+          <line>2199</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

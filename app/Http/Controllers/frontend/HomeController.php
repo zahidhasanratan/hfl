@@ -360,6 +360,455 @@ class HomeController extends Controller {
 
     }
 
+    public function TradeName(){
+
+        $sliders = Slider::all();
+        //$categories = Category::orderBy('id', 'DESC')->limit(2)->get();
+        $video = video::orderBy('id', 'DESC')->limit(2)->get();
+        $links = Link::all();
+        $main = Menu::orderBy('sequence', 'ASC')
+            ->where('display', 1)
+            ->get();
+
+        $footer = Menu::orderBy('sequence', 'ASC')
+            ->where('footer1', 1)
+            ->get();
+        $footer2 = Menu::orderBy('sequence', 'ASC')
+            ->where('footer2', 1)
+            ->get();
+        $top_header = Menu::orderBy('sequence', 'ASC')
+            ->where('top_header', 1)
+            ->get();
+        $activity = Activity::orderBy('id', 'DESC')
+
+            ->get();
+        $contact1 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $service = Service::orderBy('id', 'ASC')
+
+            ->get();
+        $news = News::orderBy('id', 'DESC')
+            ->limit(6)
+            ->get();
+        $objects = Objects::orderBy('id', 'ASC')
+            ->where('id', 1)
+            ->get();
+        $objects2 = Objects::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $contact1 = Others::find(2);
+        $about = Objects::find(5);
+        $aboutmissionvission = Objects::find(4);
+        $contact2 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $headoffice = Others::orderBy('id', 'ASC')
+            ->where('id', 4)
+            ->get();
+        $direcotr = LifeMember::all();
+        $all_pro = ProductManage::where('status', 'Active')->get();
+
+//        $cateogry_name =CategoryManage::where('id',$cat_id)->first();
+
+        $Category = CategoryManage::get();
+
+//        $cat_id = $cat_id;
+
+
+
+
+//        $pro = DB::table('prro_categorys')
+//                     ->join('product_manages','prro_categorys.pro_id','product_manages.id')
+//                    ->where('prro_categorys.cat_id',$cat_id)
+//                    ->get();
+
+
+         $t_category = TCategory::get();
+         $g_category = GCategory::get();
+
+
+        return view('frontend/product.TradeName', compact('g_category', 'Category','t_category',
+        'direcotr', 'about', 'aboutmissionvission', 'top_header', 'sliders', 'video', 'contact1', 'activity', 'service', 'Category', 'news', 'main', 'links', 'footer', 'footer2', 'objects', 'objects2', 'contact1', 'contact2', 'headoffice'));
+
+    }
+
+     public function ProductSearch(Request $request){
+        $keyword = request('keyword');
+        $sliders = Slider::all();
+        //$categories = Category::orderBy('id', 'DESC')->limit(2)->get();
+        $video = video::orderBy('id', 'DESC')->limit(2)->get();
+        $links = Link::all();
+        $main = Menu::orderBy('sequence', 'ASC')
+            ->where('display', 1)
+            ->get();
+
+        $footer = Menu::orderBy('sequence', 'ASC')
+            ->where('footer1', 1)
+            ->get();
+        $footer2 = Menu::orderBy('sequence', 'ASC')
+            ->where('footer2', 1)
+            ->get();
+        $top_header = Menu::orderBy('sequence', 'ASC')
+            ->where('top_header', 1)
+            ->get();
+        $activity = Activity::orderBy('id', 'DESC')
+
+            ->get();
+        $contact1 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $service = Service::orderBy('id', 'ASC')
+
+            ->get();
+        $news = News::orderBy('id', 'DESC')
+            ->limit(6)
+            ->get();
+        $objects = Objects::orderBy('id', 'ASC')
+            ->where('id', 1)
+            ->get();
+        $objects2 = Objects::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $contact1 = Others::find(2);
+        $about = Objects::find(5);
+        $aboutmissionvission = Objects::find(4);
+        $contact2 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $headoffice = Others::orderBy('id', 'ASC')
+            ->where('id', 4)
+            ->get();
+        $direcotr = LifeMember::all();
+        $all_pro = ProductManage::where('status', 'Active')->get();
+
+//        $cateogry_name =CategoryManage::where('id',$cat_id)->first();
+
+        $Category = CategoryManage::get();
+
+//        $cat_id = $cat_id;
+
+
+
+
+//        $pro = DB::table('prro_categorys')
+//                     ->join('product_manages','prro_categorys.pro_id','product_manages.id')
+//                    ->where('prro_categorys.cat_id',$cat_id)
+//                    ->get();
+
+
+         $t_category = TCategory::get();
+         $g_category = GCategory::get();
+
+
+        return view('frontend/product.ProductSearch', compact('g_category','keyword', 'Category','t_category',
+        'direcotr', 'about', 'aboutmissionvission', 'top_header', 'sliders', 'video', 'contact1', 'activity', 'service', 'Category', 'news', 'main', 'links', 'footer', 'footer2', 'objects', 'objects2', 'contact1', 'contact2', 'headoffice'));
+
+    }
+
+
+
+
+    public function Generic(){
+
+        $sliders = Slider::all();
+        //$categories = Category::orderBy('id', 'DESC')->limit(2)->get();
+        $video = video::orderBy('id', 'DESC')->limit(2)->get();
+        $links = Link::all();
+        $main = Menu::orderBy('sequence', 'ASC')
+            ->where('display', 1)
+            ->get();
+
+        $footer = Menu::orderBy('sequence', 'ASC')
+            ->where('footer1', 1)
+            ->get();
+        $footer2 = Menu::orderBy('sequence', 'ASC')
+            ->where('footer2', 1)
+            ->get();
+        $top_header = Menu::orderBy('sequence', 'ASC')
+            ->where('top_header', 1)
+            ->get();
+        $activity = Activity::orderBy('id', 'DESC')
+
+            ->get();
+        $contact1 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $service = Service::orderBy('id', 'ASC')
+
+            ->get();
+        $news = News::orderBy('id', 'DESC')
+            ->limit(6)
+            ->get();
+        $objects = Objects::orderBy('id', 'ASC')
+            ->where('id', 1)
+            ->get();
+        $objects2 = Objects::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $contact1 = Others::find(2);
+        $about = Objects::find(5);
+        $aboutmissionvission = Objects::find(4);
+        $contact2 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $headoffice = Others::orderBy('id', 'ASC')
+            ->where('id', 4)
+            ->get();
+        $direcotr = LifeMember::all();
+        $all_pro = ProductManage::where('status', 'Active')->get();
+
+//        $cateogry_name =CategoryManage::where('id',$cat_id)->first();
+
+        $Category = CategoryManage::get();
+
+//        $cat_id = $cat_id;
+
+
+
+
+//        $pro = DB::table('prro_categorys')
+//                     ->join('product_manages','prro_categorys.pro_id','product_manages.id')
+//                    ->where('prro_categorys.cat_id',$cat_id)
+//                    ->get();
+
+
+        $t_category = TCategory::get();
+        $g_category = GCategory::get();
+
+
+        return view('frontend/product.Generic', compact('g_category', 'Category','t_category',
+            'direcotr', 'about', 'aboutmissionvission', 'top_header', 'sliders', 'video', 'contact1', 'activity', 'service', 'Category', 'news', 'main', 'links', 'footer', 'footer2', 'objects', 'objects2', 'contact1', 'contact2', 'headoffice'));
+
+
+    }
+
+    public function Therapeutic(){
+
+        $sliders = Slider::all();
+        //$categories = Category::orderBy('id', 'DESC')->limit(2)->get();
+        $video = video::orderBy('id', 'DESC')->limit(2)->get();
+        $links = Link::all();
+        $main = Menu::orderBy('sequence', 'ASC')
+            ->where('display', 1)
+            ->get();
+
+        $footer = Menu::orderBy('sequence', 'ASC')
+            ->where('footer1', 1)
+            ->get();
+        $footer2 = Menu::orderBy('sequence', 'ASC')
+            ->where('footer2', 1)
+            ->get();
+        $top_header = Menu::orderBy('sequence', 'ASC')
+            ->where('top_header', 1)
+            ->get();
+        $activity = Activity::orderBy('id', 'DESC')
+
+            ->get();
+        $contact1 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $service = Service::orderBy('id', 'ASC')
+
+            ->get();
+        $news = News::orderBy('id', 'DESC')
+            ->limit(6)
+            ->get();
+        $objects = Objects::orderBy('id', 'ASC')
+            ->where('id', 1)
+            ->get();
+        $objects2 = Objects::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $contact1 = Others::find(2);
+        $about = Objects::find(5);
+        $aboutmissionvission = Objects::find(4);
+        $contact2 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $headoffice = Others::orderBy('id', 'ASC')
+            ->where('id', 4)
+            ->get();
+        $direcotr = LifeMember::all();
+        $all_pro = ProductManage::where('status', 'Active')->get();
+
+//        $cateogry_name =CategoryManage::where('id',$cat_id)->first();
+
+        $Category = CategoryManage::get();
+
+//        $cat_id = $cat_id;
+
+
+
+
+//        $pro = DB::table('prro_categorys')
+//                     ->join('product_manages','prro_categorys.pro_id','product_manages.id')
+//                    ->where('prro_categorys.cat_id',$cat_id)
+//                    ->get();
+
+
+        $t_category = TCategory::get();
+        $g_category = GCategory::get();
+
+
+        return view('frontend/product.Therapeutic', compact('g_category', 'Category','t_category',
+            'direcotr', 'about', 'aboutmissionvission', 'top_header', 'sliders', 'video', 'contact1', 'activity', 'service', 'Category', 'news', 'main', 'links', 'footer', 'footer2', 'objects', 'objects2', 'contact1', 'contact2', 'headoffice'));
+
+
+    }
+
+
+
+
+    public function TherapeuticID($id){
+
+        $sliders = Slider::all();
+        //$categories = Category::orderBy('id', 'DESC')->limit(2)->get();
+        $video = video::orderBy('id', 'DESC')->limit(2)->get();
+        $links = Link::all();
+        $main = Menu::orderBy('sequence', 'ASC')
+            ->where('display', 1)
+            ->get();
+
+        $footer = Menu::orderBy('sequence', 'ASC')
+            ->where('footer1', 1)
+            ->get();
+        $footer2 = Menu::orderBy('sequence', 'ASC')
+            ->where('footer2', 1)
+            ->get();
+        $top_header = Menu::orderBy('sequence', 'ASC')
+            ->where('top_header', 1)
+            ->get();
+        $activity = Activity::orderBy('id', 'DESC')
+
+            ->get();
+        $contact1 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $service = Service::orderBy('id', 'ASC')
+
+            ->get();
+        $news = News::orderBy('id', 'DESC')
+            ->limit(6)
+            ->get();
+        $objects = Objects::orderBy('id', 'ASC')
+            ->where('id', 1)
+            ->get();
+        $objects2 = Objects::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $contact1 = Others::find(2);
+        $about = Objects::find(5);
+        $aboutmissionvission = Objects::find(4);
+        $contact2 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $headoffice = Others::orderBy('id', 'ASC')
+            ->where('id', 4)
+            ->get();
+        $direcotr = LifeMember::all();
+        $all_pro = ProductManage::where('status', 'Active')->get();
+
+//        $cateogry_name =CategoryManage::where('id',$cat_id)->first();
+
+        $Category = CategoryManage::get();
+
+//        $cat_id = $cat_id;
+
+
+
+
+//        $pro = DB::table('prro_categorys')
+//                     ->join('product_manages','prro_categorys.pro_id','product_manages.id')
+//                    ->where('prro_categorys.cat_id',$cat_id)
+//                    ->get();
+
+
+        $t_category = TCategory::get();
+        $g_category = GCategory::get();
+
+
+        return view('frontend/product.TherapeuticID', compact('g_category', 'Category','t_category',
+            'direcotr', 'about', 'aboutmissionvission', 'top_header', 'sliders', 'video', 'contact1', 'activity', 'service', 'Category', 'news', 'main', 'links', 'footer', 'footer2', 'objects', 'objects2', 'contact1', 'contact2', 'headoffice'));
+
+
+    }
+
+
+    public function GenericId($id){
+
+        $sliders = Slider::all();
+        //$categories = Category::orderBy('id', 'DESC')->limit(2)->get();
+        $video = video::orderBy('id', 'DESC')->limit(2)->get();
+        $links = Link::all();
+        $main = Menu::orderBy('sequence', 'ASC')
+            ->where('display', 1)
+            ->get();
+
+        $footer = Menu::orderBy('sequence', 'ASC')
+            ->where('footer1', 1)
+            ->get();
+        $footer2 = Menu::orderBy('sequence', 'ASC')
+            ->where('footer2', 1)
+            ->get();
+        $top_header = Menu::orderBy('sequence', 'ASC')
+            ->where('top_header', 1)
+            ->get();
+        $activity = Activity::orderBy('id', 'DESC')
+
+            ->get();
+        $contact1 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $service = Service::orderBy('id', 'ASC')
+
+            ->get();
+        $news = News::orderBy('id', 'DESC')
+            ->limit(6)
+            ->get();
+        $objects = Objects::orderBy('id', 'ASC')
+            ->where('id', 1)
+            ->get();
+        $objects2 = Objects::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $contact1 = Others::find(2);
+        $about = Objects::find(5);
+        $aboutmissionvission = Objects::find(4);
+        $contact2 = Others::orderBy('id', 'ASC')
+            ->where('id', 2)
+            ->get();
+        $headoffice = Others::orderBy('id', 'ASC')
+            ->where('id', 4)
+            ->get();
+        $direcotr = LifeMember::all();
+        $all_pro = ProductManage::where('status', 'Active')->get();
+
+//        $cateogry_name =CategoryManage::where('id',$cat_id)->first();
+
+        $Category = CategoryManage::get();
+
+//        $cat_id = $cat_id;
+
+
+
+
+//        $pro = DB::table('prro_categorys')
+//                     ->join('product_manages','prro_categorys.pro_id','product_manages.id')
+//                    ->where('prro_categorys.cat_id',$cat_id)
+//                    ->get();
+
+
+        $t_category = TCategory::get();
+        $g_category = GCategory::get();
+
+
+        return view('frontend/product.GenericId', compact('g_category', 'Category','t_category',
+            'direcotr', 'about', 'aboutmissionvission', 'top_header', 'sliders', 'video', 'contact1', 'activity', 'service', 'Category', 'news', 'main', 'links', 'footer', 'footer2', 'objects', 'objects2', 'contact1', 'contact2', 'headoffice'));
+
+
+    }
+
 
 
 
